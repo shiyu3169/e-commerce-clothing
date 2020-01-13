@@ -39,13 +39,13 @@ export class SignUp extends Component {
         confirmPassword: ""
       });
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
   handleChange = e => {
     const { name, value } = e.target;
-    this.setState({[name]: value})
+    this.setState({ [name]: value });
   };
 
   render() {
