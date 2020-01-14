@@ -10,6 +10,7 @@ import Sign from "./pages/Sign/Sign";
 import { setCurrentUser } from "./redux/user/userAction";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "./redux/user/userSelector";
+import Checkout from "./components/Checkout/Checkout";
 
 class App extends Component {
   unsubscribeFromAuth = null;
@@ -42,7 +43,8 @@ class App extends Component {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/shop" component={Shop} />
+          <Route path="/shop" component={Shop} />
+          <Route exact path="/checkout" component={Checkout} />
           <Route
             exact
             path="/sign"
