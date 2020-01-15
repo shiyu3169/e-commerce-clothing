@@ -1,24 +1,20 @@
-import React, { Component } from "react";
-import SHOP_DATA from "./data";
+import React from "react";
 import CollectionPreview from "../../components/CollectionPreview/CollectionPreview";
-
-export class Shop extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      collections: SHOP_DATA
-    };
-  }
-  render() {
-    const { collections } = this.state;
-    return (
-      <div>
-        {collections.map(({ id, items, title }) => (
-          <CollectionPreview key={id} items={items} title={title} />
-        ))}
-      </div>
-    );
-  }
+import { createStructuredSelector } from "reselect";
+import { connect } from "react-redux";
+import { selectShopCollections } from "../../redux/shop/shopSelector";
+export function Shop({ collections }) {
+  return (
+    <div>
+      {collections.map(({ id, items, title }) => (
+        <CollectionPreview key={id} items={items} title={title} />
+      ))}
+    </div>
+  );
 }
 
-export default Shop;
+const mapStateToProps = createStructuredSelector({
+  collections: selectShopCollections
+});
+
+export default connect(mapStateToProps)(Shop);
