@@ -1,14 +1,16 @@
 import React from "react";
-import "./Sign.scss";
+
 import SignIn from "../../components/SignIn/SignIn";
 import SignUp from "../../components/SignUp/SignUp";
 
+import { SignContainer } from "./SignStyle";
+
 const Sign = () => {
   return (
-    <div className="sign">
+    <SignContainer>
       <SignIn />
       <SignUp />
-    </div>
+    </SignContainer>
   );
 };
 
