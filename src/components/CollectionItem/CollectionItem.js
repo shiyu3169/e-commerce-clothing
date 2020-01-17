@@ -1,9 +1,7 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
-import { addItem } from "../../redux/cart/cartAction";
-
-import Button from "../Button/Button";
+import { addItem } from '../../redux/cart/cartAction';
 
 import {
   CollectionItemContainer,
@@ -12,7 +10,7 @@ import {
   ButtonContainer,
   PriceSpan,
   NameSpan
-} from "./CollectionItemStyle";
+} from './CollectionItemStyle';
 
 const CollectionItem = ({ item, addItem }) => {
   const { name, price, imageUrl } = item;
@@ -24,8 +22,8 @@ const CollectionItem = ({ item, addItem }) => {
         <PriceSpan>${price}</PriceSpan>
       </CollectionFooter>
       <ButtonContainer inverted onClick={() => addItem(item)}>
-        {" "}
-        ADD TO CART{" "}
+        {' '}
+        ADD TO CART{' '}
       </ButtonContainer>
     </CollectionItemContainer>
   );
