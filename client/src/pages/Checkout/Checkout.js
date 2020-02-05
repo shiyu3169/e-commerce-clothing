@@ -1,14 +1,14 @@
-import React from "react";
-import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
+import React from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
 import {
   selectCartItems,
   selectCartTotal
-} from "../../redux/cart/cartSelector";
+} from '../../redux/cart/cartSelector';
 
-import CheckoutItem from "../../components/CheckoutItem/CheckoutItem";
-import StripeButton from "../../components/StripeButton/StripeButton";
+import CheckoutItem from '../../components/CheckoutItem/CheckoutItem';
+import StripeButton from '../../components/StripeButton/StripeButton';
 
 import {
   CheckoutContainer,
@@ -16,7 +16,7 @@ import {
   HeaderBlockContainer,
   TotalContainer,
   TestWarningContainer
-} from "./CheckoutStyle";
+} from './CheckoutStyle';
 
 const Checkout = ({ cartItems, total }) => {
   return (
@@ -47,7 +47,7 @@ const Checkout = ({ cartItems, total }) => {
       <TestWarningContainer>
         *Please use the following test credit card for payments*
         <br />
-        4242 4242 4242 4242 - Exp: 01/20 - CVV: 123
+        4242 4242 4242 4242 - Exp: 01/21 - CVV: 123
       </TestWarningContainer>
       <StripeButton price={total} />
     </CheckoutContainer>
