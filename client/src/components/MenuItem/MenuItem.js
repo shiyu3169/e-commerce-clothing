@@ -13,7 +13,7 @@ import {
 const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => {
   return (
     <MenuItemContainer
-      className={`${size}`}
+      className={size}
       onClick={() => history.push(`${match.url}${linkUrl}`)}
     >
       <BackgroundImageContainer

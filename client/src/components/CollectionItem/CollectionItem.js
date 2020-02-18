@@ -16,7 +16,10 @@ const CollectionItem = ({ item, addItem }) => {
   const { name, price, imageUrl } = item;
   return (
     <CollectionItemContainer>
-      <ImageContainer style={{ backgroundImage: `url(${imageUrl})` }} />
+      <ImageContainer
+        style={{ backgroundImage: `url(${imageUrl})` }}
+        className='image'
+      />
       <CollectionFooter>
         <NameSpan>{name}</NameSpan>
         <PriceSpan>${price}</PriceSpan>
